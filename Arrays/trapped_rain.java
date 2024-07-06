@@ -14,7 +14,7 @@ public class trapped_rain {
         // right max 
         int rmax[] = new int[len];
         rmax[len-1] = height[len-1];
-        for(int i = len-2; i > 0; i--){
+        for(int i = len-2; i >= 0; i--){
             rmax[i] = Math.max(height[i], rmax[i+1]);
         }
 
@@ -30,7 +30,7 @@ public class trapped_rain {
 
     }
     public static void main(String args[]){
-        int height[] = {0,1,0,2,1,0,1,3,2,1,2,1};
+        int height[] = {4,2,0,3,2,5};
         System.out.println(trap(height));
     }
 
