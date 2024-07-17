@@ -2,7 +2,7 @@ package Queue;
 
 import java.util.Stack;
 
-public class stackusingqueue_ii {
+public class queueusingstack_ii {
     static class Queue{
         static Stack<Integer> s1 = new Stack<>();
         static Stack<Integer> s2 = new Stack<>();
