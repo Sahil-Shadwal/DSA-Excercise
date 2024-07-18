@@ -43,6 +43,14 @@ public class preorder {
             System.out.print(root.data+ " ");
             preorder(root.right);
         }
+        public static void postorder(Node root){
+            if(root == null){
+                return;
+            }
+            preorder(root.left);
+            preorder(root.right);
+            System.out.print(root.data+ " ");
+        }
     }
 
     public static void main(String args[]){
@@ -51,6 +59,9 @@ public class preorder {
         Node root = tree.buildTree(nodes);
         // System.out.println(root.data);
 
-        tree.inorder(root);
+        // tree.preorder(root);
+        // tree.inorder(root);
+        tree.postorder(root);
+
     }
 }
