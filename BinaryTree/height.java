@@ -36,15 +36,28 @@ public class height {
         int rs = sumOfNodes(root.right);
         return ls + rs + root.data;
     }
+    public static int diameter(Node root){
+        if(root == null){
+            return 0;
+        }
+        int lh = heightBs(root.left);
+        int rh = heightBs(root.right);
+        int diameter = lh + rh + 1;
+        int max = Math.max(lh,rh);
+        return Math.max(diameter,max);
+    }
     public static void main(String args[]){
     /*
-                    1
+                    1                         
                    / \
                   2   3
                  / \ / \
                 4  5 6  7
-    
-    */
+            //    /         \
+            //   39          8
+            //     \40  
+                
+    */  
     Node root = new Node(1);
     root.left = new Node(2);
     root.right = new Node(3);
@@ -52,12 +65,17 @@ public class height {
     root.left.right = new Node(5);
     root.right.left = new Node(6);
     root.right.right = new Node(7);
-    // root.right.right.right = new Node(19);
+    root.right.right.right = new Node(19);
+    root.left.left.left = new Node(39);
+    root.left.left.left.right = new Node(40);
+
 
     System.out.println(heightBs(root));
     System.out.println("----------------");
     System.out.println(countNodes(root));
     System.out.println("----------------");
     System.out.println(sumOfNodes(root));
+    System.out.println("----------------");
+    System.out.println(diameter(root));
     }
 }
