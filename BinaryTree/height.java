@@ -28,6 +28,14 @@ public class height {
         int rh = countNodes(root.right);
         return lh +rh+1;
     }
+    public static int sumOfNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+        int ls = sumOfNodes(root.left);
+        int rs = sumOfNodes(root.right);
+        return ls + rs + root.data;
+    }
     public static void main(String args[]){
     /*
                     1
@@ -44,8 +52,12 @@ public class height {
     root.left.right = new Node(5);
     root.right.left = new Node(6);
     root.right.right = new Node(7);
-    root.right.right.right = new Node(19);
+    // root.right.right.right = new Node(19);
+
     System.out.println(heightBs(root));
+    System.out.println("----------------");
     System.out.println(countNodes(root));
+    System.out.println("----------------");
+    System.out.println(sumOfNodes(root));
     }
 }
