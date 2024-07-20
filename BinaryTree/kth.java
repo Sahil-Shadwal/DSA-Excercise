@@ -79,6 +79,19 @@ public class kth {
         }
     
     }
+
+    public static void klevel( Node root, int level, int k){
+        if(root == null){
+            return ;
+        }
+        if( level == k){
+            System.out.print(root.data + " ");
+            return;
+        }
+
+        klevel(root.left, level+1, k);
+        klevel(root.right, level+1, k);
+    }
     public static void main(String args[]){
          /*
                     1                         
@@ -95,6 +108,7 @@ public class kth {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         // levelOrder(root);
-        ktth(root, 2);
+        // ktth(root, 2);
+        klevel(root, 1, 3);
     }
 }
