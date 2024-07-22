@@ -33,13 +33,30 @@ public class buildbst {
         System.out.print(root.data+ " ");
         inorder(root.right);
     }
+    public static boolean search(Node root, int key){
+        if(root == null){
+            return false;
+        }
+        if( root.data == key){
+            return true;
+        }
+        if(root.data > key){
+            return search(root.left, key);
+        }else{
+            return search(root.right,key);
+
+        }
+
+    }
     public static void main(String args[]){
-        int arr[] = { 5, 1, 3, 4, 2, 7};
+        int arr[] = { 8, 5, 1, 6, 10, 3, 9, 4, 2, 7};
         Node root = null;
         for(int i = 0 ; i < arr.length; i++){
             root = bst(root, arr[i]);
         }
-        inorder(root);
+        // inorder(root);
+
+        System.out.println(search(root, 19));
 
     }
 }
