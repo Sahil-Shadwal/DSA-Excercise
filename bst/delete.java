@@ -104,6 +104,19 @@ public class delete {
         printRoot2Leaf(root.right, path);
         path.remove(path.size()-1);
     }
+    public static boolean isValid(Node root, Node min, Node max){
+        if(root == null){
+            return true;
+        }
+        if( min != null && root.data <= min.data){
+            return false;
+        }
+        if(max != null && root.data >= max.data){
+            return false;
+        }
+
+        return isValid(root.left, min, max) && isValid(root.right, min, max);
+    }
     public static void main(String args[]){
         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
         Node root = null;
@@ -111,7 +124,7 @@ public class delete {
         for(int i = 0; i< values.length; i++){
             root = insert(root, values[i]);
         }
-        // inorder(root);
+        inorder(root);
         // System.out.println();
 
         // delete(root ,5);
@@ -119,6 +132,7 @@ public class delete {
         // inorder(root);
 
         // printInRange(root, 5, 12);
-        printRoot2Leaf(root, new ArrayList<>());
+        // printRoot2Leaf(root, new ArrayList<>());
+        System.out.println(isValid(root, null, null));
     }
 }
