@@ -34,7 +34,7 @@ public class sorting {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
+        int[] nums = {3, 1, 4, 2, 5,};
         quickSort(nums, 0, nums.length - 1);
         System.out.println(java.util.Arrays.toString(nums));
     }
