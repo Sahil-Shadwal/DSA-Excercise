@@ -1,4 +1,6 @@
+package Arrays;
 import java.util.*;
+
 public class maximumsub {
     public static int findman(int arr[]){
 
@@ -16,6 +18,26 @@ public class maximumsub {
                 currSum = 0;
             }
         }
+
+        // int start = 0, end = 0, tempStart = 0;
+
+        // for (int i = 0; i < arr.length; i++) {
+        //     currSum += arr[i];
+
+        //     if (currSum > maxSum) {
+        //         maxSum = currSum;
+        //         start = tempStart;
+        //         end = i;
+        //     }
+
+        //     if (currSum < 0) {
+        //         currSum = 0;
+        //         tempStart = i + 1;
+        //     }
+        // }
+
+        // System.out.println("Maximum subarray: " + Arrays.toString(Arrays.copyOfRange(arr, start, end + 1)));
+        // return maxSum;
 
         return maxSum;
     }
