@@ -28,6 +28,23 @@ public class cycleLL {
         return false;
     }
 
+    public static Node detectCycle(Node head) {
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
+                break;
+        }
+        if (fast == null || fast.next == null)
+            return null;
+        while (head != slow) {
+            head = head.next;
+            slow = slow.next;
+        }
+        return head;
+    }
+
     public static void main(String args[]) {
         Node list = new Node(5);
         list.next = new Node(6);
@@ -38,5 +55,7 @@ public class cycleLL {
         // list.next.next.next.next.next = list.next.next;
 
         System.out.println(findCycle(list));
+        System.out.println(detectCycle(list));
+
     }
 }
