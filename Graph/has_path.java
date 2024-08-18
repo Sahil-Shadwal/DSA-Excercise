@@ -2,8 +2,7 @@ package Graph;
 
 import java.util.*;
 
-public class dfs_graph {
-
+public class has_path {
     static class Edge {
         int src;
         int dest;
@@ -41,31 +40,45 @@ public class dfs_graph {
         graph[5].add(new Edge(5, 6, 1));
         graph[5].add(new Edge(5, 3, 1));
         graph[5].add(new Edge(5, 4, 1));
-
     }
 
-    public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]) {
+    public static boolean hasPath(ArrayList<Edge> graph[], int src, int dest, boolean vis[]) {
+        if (src == dest)
+            return true;
 
-        // visiting the node
-        System.out.print(curr + " ");
-        vis[curr] = true;
+        vis[src] = true;
 
-        // printing the neighbours
+        for (int i = 0; i < graph[src].size(); i++) {
+            Edge e = graph[src].get(i);
 
-        for (int i = 0; i < graph[curr].size(); i++) {
-            Edge e = graph[curr].get(i);
-            if (!vis[e.dest]) {
-                dfs(graph, e.dest, vis);
+            if (!vis[e.dest] && hasPath(graph, e.dest, dest, vis)) {
+                return true;
             }
         }
+        return false;
     }
 
     public static void main(String args[]) {
+
+        /*
+         * 0
+         * / \
+         * 1 2
+         * /| |\
+         * 3 | | 4
+         * | | | |
+         * 5 | | |
+         * \| |/
+         * 6 3
+         */
 
         int V = 7;
         @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
-        dfs(graph, 0, new boolean[V]);
+
+        System.out.println(hasPath(graph, 0, 5, new boolean[V]));
+
+        System.out.println(hasPath(graph, 0, 7, new boolean[V]));
     }
 }
