@@ -1,21 +1,23 @@
-package Day2;
-
 public class ArrayElementCounter {
-    public static int count(int Arr[]) {
-        int c = 1;
-        int leftMax = Arr[0];
+    public static int countElements(int[] Arr) {
+        if (Arr.length == 0)
+            return 0;
+
+        int count = 1; // First element is always counted
+        int currentMax = Arr[0];
+
         for (int i = 1; i < Arr.length; i++) {
-            if (Arr[i] > leftMax) {
-                c++;
+            if (Arr[i] > currentMax) {
+                count++;
+                currentMax = Arr[i];
             }
         }
-        return c;
+
+        return count;
     }
 
-    public static void main(String args[]) {
-        int Arr[] = new int[] { 7, 4, 8, 2, 9 };
-        int Arr1[] = new int[] { 5, 3, 4, 5, 8, 9 };
-        System.out.println(count(Arr));
-        System.out.println(count(Arr1));
+    public static void main(String[] args) {
+        int[] Arr1 = { 5, 3, 4, 5, 8, 9 };
+        System.out.println(countElements(Arr1)); // Output should be 4
     }
 }
