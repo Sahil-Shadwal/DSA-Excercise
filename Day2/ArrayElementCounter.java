@@ -17,7 +17,7 @@ public class ArrayElementCounter {
     }
 
     public static void main(String[] args) {
-        int[] Arr1 = { 5, 3, 4, 5, 8, 9 };
+        int[] Arr1 = { 3, 4, 5, 8, 9 };
         System.out.println(countElements(Arr1)); // Output should be 4
     }
 }
