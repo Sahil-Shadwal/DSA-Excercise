@@ -94,3 +94,34 @@ Since a total of 3 elements are present in the array that meet the condition.
 
 **Output:**
 3
+
+## Question 4
+
+### Problem Statement
+
+A parking lot in a mall has RxC number of parking spaces. Each parking space will either be empty (0) or full (1). The status (0/1) of a parking space is represented as the element of the matrix. The task is to find the index of the row (R) in the parking lot that has the most parking spaces full (1).
+
+#### Note:
+
+- RxC: Size of the matrix
+- Elements of the matrix M should be only 0 or 1.
+
+#### Example 1
+
+**Input:**
+3 -> Value of R (row)
+3 -> Value of C (column)
+[0, 1, 0, 1, 1, 0, 1, 1, 1] -> Elements of the array M[R][C] where each element is separated by a new line.
+
+**Output:**
+3 -> Row 3 has the maximum number of 1’s
+
+#### Example 2
+
+**Input:**
+4 -> Value of R (row)
+3 -> Value of C (column)
+[0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1] -> Elements of the array M[R][C]
+
+**Output:**
+4 -> Row 4 has the maximum number of 1’s

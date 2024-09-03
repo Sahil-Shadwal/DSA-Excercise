@@ -1,3 +1,5 @@
+package Day2;
+
 public class ArrayElementCounter {
     public static int countElements(int[] Arr) {
         if (Arr.length == 0)
