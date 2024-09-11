@@ -232,3 +232,120 @@ Hence, they will be back in their positions after 6 beats. So, the answer is 6.
 
 1. First Input: Accept value of Integer, N.
 2. Next ‘N’ Lines: Elements of sequence A[].
+
+## Question 3
+
+### Problem Statement
+
+This vacation you went to visit the golden house. There are N rooms in this golden house and its owner needs someone to take care of the management of this house. As you have been unemployed for a long time, you are interested in this job. The owner of this house wanted an intelligent manager for this role, so he created one puzzle within that golden house. The person who will be able to solve that puzzle will be the manager of the golden house.
+
+The owner of the house kept some numbers of golden coins in each room. You have to choose two rooms, one from where you will enter and the other one from where you will exit. From any room, either you can exit, or you can move to the next room. While visiting any room you will collect all the gold coins, and if you enter any room then you can’t skip collecting gold coins from that room, you have to take those coins. The owner wants to have exactly K coins when you exit the room, he guarantees that there will be at least one possible solution for this puzzle.
+
+Given the number of rooms (N), and the number of gold coins in N rooms. You have to find room numbers from where you will start and from where you will exit. If there is more than one solution possible, then you have to provide a solution with a smaller starting room number. You can assume that room numbers will start from 1 and end at N.
+
+Hint: Find a continuous subsequence whose sum will be exactly equal to K.
+
+### Example 1
+
+**Input:**
+
+- 10 15 -> N = 10, K = 15
+- 5 3 7 14 18 1 18 4 8 3 -> Number of gold coins in each room.
+
+**Output:**
+
+- 1 3
+
+**Explanation:**
+
+There are ten rooms in the house. You want to have the total sum of gold coins in a continuous sequence of rooms to be 15. There are two solutions from this i.e. [1, 3] and [8, 10]. The solution with a smaller starting room number will be printed hence [1, 3] is the output.
+
+### Constraints
+
+- 1 <= N <= 1000
+- 1 <= K <= 1000000
+- 1 <= Number of gold coins in each room <= 1000
+
+### Input Format for Testing
+
+The candidate has to write the code to accept 2 inputs:
+
+1. First input: Accept values of integers, N and K.
+2. Second input: Accept values of integers, the number of gold coins in each room (Next Line).
+
+### Output Format for Testing
+
+The output is two integers representing the starting and ending room numbers. (Check the output in Example 1).
+
+Additional messages in output will cause the failure of test cases.
+
+### Instructions
+
+- System doesn’t allow any kind of hard-coded input value/values.
+- Written program code by the candidate will be verified against the inputs which are supplied from the system.
+
+## Question 4
+
+### Problem Statement
+
+Bob is going to bet today on horse riding. There are N horses listed in a sequence of 1 to N.
+
+The probability of winning of each horse is different so the prices for making a bet on the horses are not the same. There is no limit on the number of horses on which he can bet, but he thinks that if he bets on a continuous sequence of horses then he has a better chance to win. Bob will get K units of money if any horse on which he bets will win. But as the award is only K units so he wants to put money less than K. Bob wants to bet on as many horses as he can. As you are his best friend, he reached out to you for help, can you please find the length of the maximum continuous sequence of horses on which Bob can make a bet, and remember he will invest money less than K units. If there are more than one possible combinations, Bob will bet randomly on any one of them.
+
+Given the number of horses (N), reward money (K), and price of betting on N horses in order.
+
+Hint: For each starting index of a horse, its end index in sequences will be equal to or greater than the end index of the previous starting index.
+
+### Example 1
+
+**Input:**
+
+- 10 100 -> N = 10, K = 100
+- 30 40 50 20 20 10 90 10 10 10 -> Price to make bet on each horse in order
+
+**Output:**
+
+- 3
+
+**Explanation:**
+
+There are 10 horses, and the reward money is 100. So, Bob will put money less than 100. There are two possible sequences of length three whose total money for betting is less than 100, i.e. [50 20 20] (sum is 90) and [10 10 10] (sum is 30). Bob will choose randomly one sequence from these two. As none of the other sequences with length greater than 3 will have a price less than 100 so the answer will be 3.
+
+### Example 2
+
+**Input:**
+
+- 10 100 -> N = 10, K = 100
+- 10 90 80 20 90 60 40 60 70 75 -> Price to make bet on each horse in order
+
+**Output:**
+
+- 1
+
+**Explanation:**
+
+There are no two consecutive horses for which the sum of price is less than 100. So, Bob will choose randomly any one horse. And the max length of the sequence will be 1.
+
+### Constraints
+
+- 2 <= N <= 10^5
+- 1 <= K <= 10^9
+- 1 <= A1, A2, ..., AN <= 10^9
+
+### Input Format for Testing
+
+The candidate has to write the code to accept 2 inputs:
+
+1. First Input: It will contain two integers N (number of horses) and K (reward money).
+2. Second Input: It will contain N integers, each separated by a space, representing the price to make a bet on each horse in order.
+
+### Output Format for Testing
+
+The output is an integer representing the length of the maximum continuous sequence of horses on which Bob can make a bet with the total price less than K.
+
+Additional messages in output will cause the failure of test cases.
+
+### Instructions
+
+- System doesn’t allow any kind of hard-coded input value/values.
+- Written program code by the candidate will be verified against the inputs which are supplied from the system.
