@@ -2,17 +2,17 @@ package Day10;
 
 import java.util.*;
 
-class Gear {
-    int x, y, rr;
-
-    public Gear(int x, int y, int rr) {
-        this.x = x;
-        this.y = y;
-        this.rr = rr;
-    }
-}
 
 public class GearRotation {
+    static class Gear {
+        int x, y, rr;
+    
+        public Gear(int x, int y, int rr) {
+            this.x = x;
+            this.y = y;
+            this.rr = rr;
+        }
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
